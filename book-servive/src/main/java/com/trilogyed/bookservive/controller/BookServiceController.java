@@ -2,8 +2,8 @@ package com.trilogyed.bookservive.controller;
 
 import com.trilogyed.bookservive.dto.Book;
 import com.trilogyed.bookservive.service.BookServiceLayer;
-import com.trilogyed.bookservice.NotFoundException;
-import com.trilogyed.bookservice.service.BookServiceLayer;
+import com.trilogyed.bookservive.viewModel.BookViewModel;
+import com.trilogyed.noteservice.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +22,7 @@ public class BookServiceController {
 
     @RequestMapping(value = "/books", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public Book createBook(@RequestBody Book book) {
+    public BookViewModel createBook(@RequestBody BookViewModel book) {
         return bookServiceLayer.saveBook(book);
     }
 
