@@ -26,10 +26,12 @@ public class NoteService {
     public Note createNote(@RequestBody Note note) {
         return noteServiceLayer.saveNote(note);
     }
+
     @RequestMapping(value = "/notes/{note_id}", method = RequestMethod.DELETE)
     public void deleteNote(@PathVariable int id) {
         noteServiceLayer.deleteNoteby(id);
     }
+
     @RequestMapping(value = "/notes/{note_id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateNote(@PathVariable("note_id") int note_id, @RequestBody @Valid Note note) {
