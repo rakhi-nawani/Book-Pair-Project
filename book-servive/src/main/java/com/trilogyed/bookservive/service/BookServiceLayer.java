@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class BookServiceLayer {
 
@@ -43,9 +45,10 @@ public class BookServiceLayer {
     }
 
     public BookViewModel getBookbyId(int book_id) {
-        BookViewModel bookViewModel = new BookViewModel();
-        Book book = repo.getOne(bookViewModel.getBook_id());
-        return buildBookViewModel(book);
+       //BookViewModel bookViewModel = new BookViewModel();
+      //  Book book = repo.findById(book_id);
+       // return buildBookViewModel(book);
+        return null;
     }
 
     public List<BookViewModel> getAllBooks() {
@@ -65,6 +68,7 @@ public class BookServiceLayer {
         bookViewModel.setAuthor(book.getAuthor());
         bookViewModel.setBook_id(book.getBook_id());
         bookViewModel.setNoteList(client.getNoteByBookId(bookViewModel.getBook_id()));
+
         return bookViewModel;
     }
 }

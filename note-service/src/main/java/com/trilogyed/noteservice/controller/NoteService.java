@@ -64,10 +64,5 @@ public class NoteService {
             throw new NotFoundException("Note could not be retrieved for id " + book_id);
         return noteList;
     }
-//    @RequestMapping(value="/ad", method = RequestMethod.GET)
-//    public String getRandomAd() {
-//        return  client.getRandomAd();
-//    }
-
 
 }

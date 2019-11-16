@@ -9,6 +9,7 @@
         <module name="note-service" />
         <module name="book-eureka-registry" />
         <module name="book-config-server" />
+        <module name="note-queue-comsumer" />
         <module name="book-servive" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
       <module name="book-config-server" target="1.8" />
       <module name="book-eureka-registry" target="1.8" />
       <module name="book-servive" target="1.8" />
+      <module name="note-queue-comsumer" target="1.8" />
       <module name="note-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -24,6 +26,7 @@
       <module name="book-config-server" options="-parameters" />
       <module name="book-eureka-registry" options="-parameters" />
       <module name="book-servive" options="-parameters" />
+      <module name="note-queue-comsumer" options="-parameters" />
       <module name="note-service" options="-parameters" />
     </option>
   </component>
