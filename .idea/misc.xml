@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/note-service/pom.xml" />
         <option value="$PROJECT_DIR$/book-servive/pom.xml" />
+        <option value="$PROJECT_DIR$/book-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/book-eureka-registry/pom.xml" />
       </list>
     </option>
   </component>

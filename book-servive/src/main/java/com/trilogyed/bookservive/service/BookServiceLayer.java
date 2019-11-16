@@ -5,14 +5,15 @@ import com.trilogyed.bookservive.dto.Book;
 import com.trilogyed.bookservive.feign.NoteServiceClient;
 import com.trilogyed.bookservive.viewModel.BookViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class BookServiceLayer {
 
     private BookServiceRepository repo;
-    private final NoteServiceClient client;
+    private NoteServiceClient client;
 
     @Autowired
     public BookServiceLayer(BookServiceRepository repo, NoteServiceClient client){
@@ -21,13 +22,13 @@ public class BookServiceLayer {
     }
 
 
-    public BookViewModel saveBook(BookViewModel bookViewModel) {
+    public Book saveBook(Book book) {
 
-        Book book = new Book();
-        book.setTitle(bookViewModel.getTitle());
-        book.setAuthor(bookViewModel.getAuthor());
-        repo.save(book);
-        return buildBookViewModel(book);
+       Book book1 = new Book();
+        book1.setTitle(book.getTitle());
+        book1.setAuthor(book.getAuthor());
+        repo.save(book1);
+        return book1;
     }
 
     public void deleteBookby(int id) {
@@ -38,7 +39,7 @@ public class BookServiceLayer {
 //        Book book = new Book();
 //        book.setTitle(bookViewModel.getTitle());
 //        book.setAuthor(bookViewModel.getAuthor());
-        
+
     }
 
     public BookViewModel getBookbyId(int book_id) {
