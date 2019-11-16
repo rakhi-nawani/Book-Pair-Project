@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface BookServiceRepository extends JpaRepository<Book, Integer> {
-
+    Book save(Book book);
 }
