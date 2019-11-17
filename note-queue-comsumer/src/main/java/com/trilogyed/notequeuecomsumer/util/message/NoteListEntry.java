@@ -1,4 +1,4 @@
-package com.trilogyed.notequeuecomsumer.messages;
+package com.trilogyed.notequeuecomsumer.util.message;
 
 public class NoteListEntry {
     Integer book_id;

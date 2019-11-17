@@ -44,11 +44,20 @@ public class BookServiceLayer {
 
     }
 
-    public BookViewModel getBookbyId(int book_id) {
-       //BookViewModel bookViewModel = new BookViewModel();
-      //  Book book = repo.findById(book_id);
-       // return buildBookViewModel(book);
-        return null;
+    public  BookViewModel getBookbyId(int id) {
+//        BookViewModel bookViewModel = new BookViewModel();
+//      Optional<Book>   book = repo.findById(id);
+//      bookViewModel = buildBookViewModel(book);
+//       return buildBookViewModel(book);
+        BookViewModel outPutBook = null;
+        Optional<Book> bookOptional = repo.findById(id);
+        if (bookOptional.isPresent()){
+            outPutBook = buildBookViewModel(bookOptional.get());
+        }
+        else{
+            return outPutBook;
+        }
+        return outPutBook;
     }
 
     public List<BookViewModel> getAllBooks() {

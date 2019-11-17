@@ -1,6 +1,6 @@
 package com.trilogyed.notequeuecomsumer;
 
-import com.trilogyed.notequeuecomsumer.messages.NoteListEntry;
+import com.trilogyed.notequeuecomsumer.util.message.NoteListEntry;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 

@@ -68,7 +68,7 @@ public class BookServiceController {
     }
     @RequestMapping(value = "/books/{book_id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public BookViewModel getBookByBookId( int book_id) {
+    public BookViewModel getBookByBookId( @PathVariable int book_id) {
         BookViewModel bookViewModel = bookServiceLayer.getBookbyId(book_id);
         if (bookViewModel == null)
             throw new NotFoundException("Book could not be retrieved for id " + book_id);
@@ -118,8 +118,8 @@ public class BookServiceController {
         return noteList;
     }
 
-    @RequestMapping(value = "/note", method = RequestMethod.POST)
-    public String createAccount(@RequestBody Note note) {
+    @RequestMapping(value = "/note/{note_id}", method = RequestMethod.PUT)
+    public String updateNoteByQueue(@PathVariable("note_id") int note_id, @RequestBody @Valid Note note) {
         // create message to send to email list creation queue
         NoteListEntry msg = new NoteListEntry(note.getBook_id() + " " + note.getNote());
         System.out.println("Sending message...");
@@ -128,7 +128,7 @@ public class BookServiceController {
 
         // Now do account creation stuff...
 
-        return "Note Created";
+        return "Note Updated";
     }
 
 
